@@ -1,8 +1,18 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Settings
+" -----------------
+
 " Setting leader key to space
 let mapleader = "\<Space>"
+
+filetype indent plugin on
+syntax on
+
+" Support all three fileformats, in this order
+set ffs=unix,mac,dos
+set encoding=utf-8
 
 " Split edit your vimrc. Type space, v, r in sequence to trigger
 nmap <Leader>vr :sp $MYVIMRC<cr>
@@ -17,13 +27,6 @@ nmap <Leader><Right> $
 " Set moving between windows to tab and doubletab.
 noremap <TAB><TAB> <C-W>w
 noremap <TAB> <C-W>
-
-" Settings
-" -----------------
-filetype indent plugin on
-syntax on
-set ffs=unix,mac,dos " Support all three fileformats, in this order
-set encoding=utf-8
 
 " Coding style preferences
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
