@@ -24,6 +24,8 @@ nmap <Leader>so :source $MYVIMRC<cr>
 nmap <Leader><Left> ^
 nmap <Leader><Right> $
 
+nmap <Leader><Up> :m-2<CR>
+nmap <Leader><Down> :m+<CR>
 " Set moving between windows to tab and doubletab.
 noremap <TAB><TAB> <C-W>w
 noremap <TAB> <C-W>
