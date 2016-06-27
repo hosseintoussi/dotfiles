@@ -1,5 +1,26 @@
-call pathogen#infect()
-call pathogen#helptags()
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Plugins that I use
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'gregsexton/MatchTag'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
+Plugin 'akmassey/vim-codeschool'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Settings
 " -----------------
