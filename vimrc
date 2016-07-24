@@ -1,10 +1,13 @@
 set nocompatible
 filetype off
+filetype plugin on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Plugins that I use
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 Plugin 'gregsexton/MatchTag'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
@@ -46,6 +49,9 @@ colorscheme onedark
 "settings
 " ----------------
 
+" Enable Matchiit
+runtime macros/matchit.vim
+
 " Setting leader key to space
 let mapleader = "\<Space>"
 
@@ -72,6 +78,9 @@ nmap <Leader><Down> :m+<CR>
 noremap <TAB><TAB> <C-W>w
 noremap <TAB> <C-W>
 
+" jump to the next or previous method
+nmap <Leader>m ]m
+nmap <Leader>n [m
 " Coding style preferences
 set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
 
