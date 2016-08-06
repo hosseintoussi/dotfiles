@@ -20,6 +20,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
+Plugin 'Townk/vim-autoclose'
+Plugin 'vim-scripts/closetag.vim'
 "Plugin 'akmassey/vim-codeschool'
 Plugin 'joshdick/onedark.vim'
 call vundle#end()            " required
