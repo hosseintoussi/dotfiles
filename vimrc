@@ -75,7 +75,9 @@ autocmd FileType ruby set tabstop=2|set shiftwidth=2 |set expandtab
 set relativenumber
 set number
 set laststatus=2
-
+" Added highlight of line and col
+set cursorline
+set cursorcolumn
 " word wrap
 nnoremap <Leader>w :set wrap!<CR>
 
