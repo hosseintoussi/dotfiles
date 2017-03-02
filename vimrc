@@ -77,7 +77,7 @@ set relativenumber
 set number
 set laststatus=2
 
-" functions to toggle number display
+" Functions to hide and display line numbers
 function Hidenu()
   :set nonumber
   :set nornu
@@ -101,6 +101,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " ctrlp
 let g:ctrlp_use_caching = 0
+
+" slow scroll issues
+set lazyredraw
 
 " ** Nerdtree toggle
 nnoremap <Leader>\ :NERDTreeToggle<CR>
