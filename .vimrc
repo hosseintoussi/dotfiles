@@ -1,5 +1,5 @@
 set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins that I use
@@ -71,26 +71,11 @@ nmap <Leader>n [m
 " Coding style preferences
 "set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
 autocmd FileType * set tabstop=2|set shiftwidth=2 |set expandtab
-
 " display line number
 set relativenumber
 set number
 set laststatus=2
-
-" Functions to hide and display line numbers
-function Hidenu()
-  :set nonumber
-  :set nornu
-endfunction
-
-function Shownu()
-  :set number
-  :set rnu
-endfunction
-
-nmap <Leader>hn :exec Hidenu()<cr>
-nmap <Leader>sn :exec Shownu()<cr>
-" Added highlight of line and co
+" Added highlight of line and col
 set cursorline
 set cursorcolumn
 " word wrap
@@ -101,9 +86,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " ctrlp
 let g:ctrlp_use_caching = 0
-
-" slow scroll issues
-set lazyredraw
 
 " ** Nerdtree toggle
 nnoremap <Leader>\ :NERDTreeToggle<CR>
