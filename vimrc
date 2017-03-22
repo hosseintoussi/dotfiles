@@ -101,6 +101,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " ctrlp
 let g:ctrlp_use_caching = 0
+let g:ctrlp_max_depth = 40
 
 " slow scroll issues
 set lazyredraw
