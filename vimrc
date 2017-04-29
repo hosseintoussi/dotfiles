@@ -68,6 +68,9 @@ noremap <TAB> <C-W>
 nmap <Leader>m ]m
 nmap <Leader>n [m
 
+" yank to clipboard
+vmap <Leader>y "*y
+
 " Coding style preferences
 "set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
 autocmd FileType * set tabstop=2|set shiftwidth=2 |set expandtab
