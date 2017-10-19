@@ -8,7 +8,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'gregsexton/MatchTag'
 Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
@@ -28,6 +27,14 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()            " required
+
+call plug#begin('~/.vim/plugged')
+
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+set rtp+=/usr/local/opt/fzf
 
 " Color settings
 " ----------------
@@ -71,6 +78,9 @@ nmap <Leader>n [m
 " yank to clipboard
 vmap <Leader>y "*y
 
+" file finding
+nmap <Leader>t :Files<CR>
+
 " Coding style preferences
 "set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
 autocmd FileType * set tabstop=2|set shiftwidth=2 |set expandtab
@@ -81,12 +91,12 @@ set number
 set laststatus=2
 
 " Functions to hide and display line numbers
-function Hidenu()
+function! Hidenu()
   :set nonumber
   :set nornu
 endfunction
 
-function Shownu()
+function! Shownu()
   :set number
   :set rnu
 endfunction
@@ -101,10 +111,6 @@ nnoremap <Leader>w :set wrap!<CR>
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
-
-" ctrlp
-let g:ctrlp_use_caching = 0
-let g:ctrlp_max_depth = 40
 
 " slow scroll issues
 set lazyredraw
