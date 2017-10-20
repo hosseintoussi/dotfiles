@@ -4,8 +4,6 @@ call vundle#begin()
 
 " Plugins that I use
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
 Plugin 'gregsexton/MatchTag'
 Plugin 'mileszs/ack.vim'
 Plugin 'mattn/emmet-vim'
@@ -20,11 +18,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'joshdick/onedark.vim'
 "Plugin 'hynek/vim-python-pep8-indent'
 "Plugin 'akmassey/vim-codeschool'
 "Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()            " required
 
@@ -76,10 +74,6 @@ nmap <Leader><Down> :m+<CR>
 noremap <TAB><TAB> <C-W>w
 noremap <TAB> <C-W>
 
-" jump to the next or previous method
-nmap <Leader>m ]m
-nmap <Leader>n [m
-
 " yank to clipboard
 vmap <Leader>y "*y
 
@@ -112,9 +106,11 @@ endfunction
 
 nmap <Leader>hn :exec Hidenu()<cr>
 nmap <Leader>sn :exec Shownu()<cr>
+
 " Added highlight of line and co
 set cursorline
 set cursorcolumn
+
 " word wrap
 nnoremap <Leader>w :set wrap!<CR>
 
