@@ -122,3 +122,7 @@ set lazyredraw
 
 " ** Nerdtree toggle
 nnoremap <Leader>\ :NERDTreeToggle<CR>
+
+" highlight column 80
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 80)
