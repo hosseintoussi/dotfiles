@@ -111,7 +111,10 @@ nmap <Leader>sn :exec Shownu()<cr>
 set cursorline
 set cursorcolumn
 
-" word wrap
+" highlight column 80 and 100
+set colorcolumn=80,100
+
+" word wrap, for when the window is too small
 nnoremap <Leader>w :set wrap!<CR>
 
 " remove trailing whitespace
@@ -122,7 +125,3 @@ set lazyredraw
 
 " ** Nerdtree toggle
 nnoremap <Leader>\ :NERDTreeToggle<CR>
-
-" highlight column 80
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 80)
