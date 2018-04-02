@@ -23,12 +23,17 @@ Plugin 'joshdick/onedark.vim'
 "Plugin 'akmassey/vim-codeschool'
 "Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'w0rp/ale'
 
 call vundle#end()            " required
 
 call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -36,6 +41,10 @@ set rtp+=/usr/local/opt/fzf
 
 " disabling swap files :D LOL
 set noswapfile
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 " Color settings
 " ----------------
@@ -83,6 +92,9 @@ nmap <Leader>t :Files<CR>
 " Buffers
 nmap <Leader>b :Buffers<CR>
 nmap XX :bd<CR>
+
+" replace with Register 0
+map <leader>rr ciw<C-r>0<Esc>
 
 " Coding style preferences
 "set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
