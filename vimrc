@@ -4,11 +4,12 @@ call vundle#begin()
 
 " Plugins that I use
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'gregsexton/MatchTag'
+" Plugin 'gregsexton/MatchTag'
 Plugin 'mileszs/ack.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
+"Plugin 'lifepillar/vim-mucomplete'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
@@ -18,7 +19,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'joshdick/onedark.vim'
 "Plugin 'hynek/vim-python-pep8-indent'
 "Plugin 'akmassey/vim-codeschool'
 "Plugin 'NLKNguyen/papercolor-theme'
@@ -34,6 +34,8 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'pangloss/vim-javascript'
+Plug 'tomasiser/vim-code-dark'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -48,24 +50,10 @@ let g:ale_linters = {
 
 " Color settings
 " ----------------
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
 syntax on
-colorscheme onedark
+let g:codedark_term256=1
+colorscheme codedark
+
 "settings
 " ----------------
 " Enable Matchiit
@@ -74,7 +62,6 @@ runtime macros/matchit.vim
 " Setting leader key to space
 let mapleader = "\<Space>"
 
-syntax on
 filetype indent plugin on
 
 " Support all three fileformats, in this order
@@ -86,6 +73,9 @@ nmap <Leader>vr :sp $MYVIMRC<cr>
 
 " Source (reload) your vimrc. Type space, s, o in sequence to trigger
 nmap <Leader>so :source $MYVIMRC<cr>
+
+" Search with ag and fzf
+nnoremap <Leader>f :Ag<CR>
 
 " Move to the beginning and end of line
 nmap <Leader><Left> ^
@@ -118,9 +108,10 @@ map <leader>rr ciw<C-r>0<Esc>
 autocmd FileType * set tabstop=2|set shiftwidth=2 |set expandtab
 
 " display line number
-set relativenumber
-set number
-set laststatus=2
+ set relativenumber
+ set number
+ set laststatus=2
+ set regexpengine=1
 
 " Functions to hide and display line numbers
 function! Hidenu()
@@ -138,7 +129,7 @@ nmap <Leader>sn :exec Shownu()<cr>
 
 " Added highlight of line and co
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 
 " highlight column 80 and 100
 set colorcolumn=80,100
@@ -154,3 +145,12 @@ set lazyredraw
 
 " ** Nerdtree toggle
 nnoremap <Leader>\ :NERDTreeToggle<CR>
+
+" show the syntax group
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
