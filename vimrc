@@ -4,12 +4,10 @@ call vundle#begin()
 
 " Plugins that I use
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'gregsexton/MatchTag'
 Plugin 'mileszs/ack.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
-"Plugin 'lifepillar/vim-mucomplete'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
@@ -19,13 +17,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'tpope/vim-commentary'
-"Plugin 'hynek/vim-python-pep8-indent'
-"Plugin 'akmassey/vim-codeschool'
-"Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'w0rp/ale'
 
-call vundle#end()            " required
+call vundle#end()
 
 call plug#begin('~/.vim/plugged')
 
@@ -35,10 +30,11 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'pangloss/vim-javascript'
 Plug 'tomasiser/vim-code-dark'
-Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
+"settings
+" ----------------
 set rtp+=/usr/local/opt/fzf
 
 " disabling swap files :D LOL
@@ -48,15 +44,11 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 
-" Color settings
-" ----------------
+" Color
 syntax on
 let g:codedark_term256=1
 colorscheme codedark
 
-"settings
-" ----------------
-" Enable Matchiit
 runtime macros/matchit.vim
 
 " Setting leader key to space
@@ -104,10 +96,9 @@ nmap XX :bd<CR>
 map <leader>rr ciw<C-r>0<Esc>
 
 " Coding style preferences
-"set expandtab tabstop=2 softtabstop=2 shiftwidth=2 " Defaults to mixed mode
 autocmd FileType * set tabstop=2|set shiftwidth=2 |set expandtab
 
-" display line number
+" display line numbers
  set relativenumber
  set number
  set laststatus=2
@@ -143,7 +134,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " slow scroll issues
 set lazyredraw
 
-" ** Nerdtree toggle
+" Nerdtree toggle
 nnoremap <Leader>\ :NERDTreeToggle<CR>
 
 " show the syntax group
