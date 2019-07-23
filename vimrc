@@ -12,6 +12,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
@@ -30,6 +31,7 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'pangloss/vim-javascript'
 Plug 'tomasiser/vim-code-dark'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -94,6 +96,10 @@ nmap XX :bd<CR>
 
 " replace with Register 0
 map <leader>rr ciw<C-r>0<Esc>
+
+" Ctags
+nnoremap <leader>] <C-]>
+nnoremap <leader>o <C-o>
 
 " Coding style preferences
 autocmd FileType * set tabstop=2|set shiftwidth=2 |set expandtab
