@@ -1,37 +1,28 @@
 set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-" Plugins that I use
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'Townk/vim-autoclose'
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'w0rp/ale'
-
-call vundle#end()
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'Townk/vim-autoclose'
+Plug 'vim-scripts/closetag.vim'
+Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
+Plug 'NLKNguyen/papercolor-theme'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 Plug 'pangloss/vim-javascript'
-Plug 'tomasiser/vim-code-dark'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'junegunn/vim-peekaboo'
 
 call plug#end()
 
@@ -48,8 +39,7 @@ let g:ale_linters = {
 
 " Color
 syntax on
-let g:codedark_term256=1
-colorscheme codedark
+colorscheme PaperColor
 
 runtime macros/matchit.vim
 
