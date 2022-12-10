@@ -16,7 +16,8 @@ Plug 'vim-scripts/closetag.vim'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'NLKNguyen/papercolor-theme'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
@@ -28,7 +29,6 @@ call plug#end()
 
 "settings
 " ----------------
-set rtp+=/usr/local/opt/fzf
 
 " disabling swap files :D LOL
 set noswapfile
